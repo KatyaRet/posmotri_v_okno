@@ -16,7 +16,7 @@ html {
   justify-content: center;
   align-items: center;
   color: #FFF;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: 'Fira Sans Condensed', Arial, sans-serif;
   font-size: 18px;
   background-color: #1b1919;
 }
@@ -51,7 +51,7 @@ ol {
 }
 
 .content {
-  max-width: 1140px;
+  max-inline-size: 1140px;
   display: flex;
   align-items: end;
   gap: 30px;
@@ -68,6 +68,7 @@ ol {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .search-form {
@@ -82,6 +83,7 @@ ol {
 }
 
 .search-form__textfield {
+  cursor: pointer;
   min-inline-size: 225px;
   appearance: none;
   background-color: transparent;
@@ -131,8 +133,8 @@ ol {
   border: 1px solid #FFF;
 }
 
-.search-form__checkbox[type='checkbox']:active,
-.search-form__checkbox[type='checkbox']:checked+ .search-form__pseudo-checkbox::before {
+.search-form__checkbox:active,
+.search-form__checkbox:checked+ .search-form__pseudo-checkbox::before {
   content: '';
   min-inline-size: 15px;
   min-block-size: 15px;
@@ -141,7 +143,6 @@ ol {
 
 .content__details {
   max-height: 100%;
-  
 }
 
 .content__list::-webkit-scrollbar {
@@ -149,11 +150,11 @@ ol {
 }
 
 .title {
-  font-family: Oswald;
+  font-family: 'Oswald', Arial, sans-serif;
   font-size: 75px;
   font-style: normal;
   font-weight: 700;
-  line-height: 94%;
+  line-height: 0.94;
   text-transform: uppercase;
   margin-bottom: 26px;
 }
@@ -193,7 +194,7 @@ ol {
 
 .content__video-card-title {
   margin-bottom: 6px;
-  font-family: Oswald, sans-serif;
+  font-family: 'Oswald', Arial, sans-serif;
   font-size: 30px;
   font-style: normal;
   font-weight: 700;
@@ -245,14 +246,19 @@ ol {
   border: 1px solid #FFF;
 }
 
+.search-form__textfield:hover {
+  cursor: text;
+}
+
 .content__card-link:active,
 .button:active {
   background: #545050;
 }
 
-.search-form__label:has(.search-form__checkbox):hover,
+.search-form__label:hover .search-form__label-text,
 .button:hover,
 .content__card-link:hover {
+  cursor: pointer;
   text-decoration-line: underline;
   text-decoration-thickness: 1px;
 }
@@ -275,8 +281,7 @@ ol {
   outline: none;
 }
 
-.button:focus-visible,
-.more-button-template:focus-visible  {
+.button:focus-visible {
   outline: 1px solid #FFF;
   outline-offset: 1px;
 }
